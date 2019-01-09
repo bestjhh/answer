@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>七夕，单身大测试</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="css/answer.css?{:rand()}">
+    <script src="js/jquery-2.1.3.js"></script>
+    <script src="js/rem.js"></script>
+    <style>
+        .mask{
+            position:fixed;
+            bottom: 0;
+            left: 0;
+            width:100%;
+            height:100%;
+            text-align:center;
+            background:rgba(0,0,0,0.8);
+            background:#000\9;/*CSS Hack,只能对ie9以下浏览器ie6,ie7,ie8有效，否侧ie10,FF,Cherome会失去透明效果*/
+            filter:Alpha(opacity=60);/*只对ie7,ie8有效*/
+            z-index:9;
+        }
+        .ewm-box .ewm{
+            position:fixed;
+            left:0;
+            top:50%;
+            transform: translateY(-50%);
+            width:100%;
+            text-align: center;
+            color:white;
+            margin-bottom:0.5rem;
+        }
+        .ewm img{
+            width:60%;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<div class="fakeloader" >
+    <div class="spinner2">
+        <div class="spinner-container container1">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container2">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container3">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+    </div>
+</div>
+<body class="index-body">
+<!--二维码-->
+<div class="mask ewm-box" style="display:none;z-index: 999;">
+<div class="ewm">
+    <img src="img/ewm.jpg"/>
+    <h4 style="color: white;font-size: 18px;font-weight: normal">长按识别二维码关注</h4>
+    <h4 style="color: white;font-size: 18px;font-weight: normal">"重庆高校生活帮"公众号</h4>
+</div>
+</div>
+    <div id="index">
+        <img src="img/indexbg1.png" alt="" class="bg">
+        <a class="rule">活动规则</a>
+        <div class="btn-group">
+            <!--开始答题-->
+            <a class="start"><img src="img/startAnswer.png" alt=""></a>
+            <!--我的奖品-->
+            <a class="reward"><img src="img/reward.png" alt=""></a>
+        </div>
+        <!--我的奖品弹窗-->
+        <div class="rewardWindow">
+            <section>
+                <h6>
+                    <img src="img/rewardTitle.png" class="title">
+                    <img src="img/heart.png" class="heart">
+                </h6>
+                <ul class="rewardList">
+                        <li><a>现金红包2元</a><span>2018-10-12</span></li>
+                        <li class="noData"><a>暂无记录，参与答题即可获得抽奖机会~</a></li>
+
+                </ul>
+                <a class="getIt" >一键领取</a>
+                <img src="img/cancel.png" alt="" class="close" onclick="$(this).parents('.rewardWindow').css('display','none')">
+            </section>
+        </div>
+        <!--活动规则-->
+        <div class="ruleWindow">
+            <section>
+                <h6>
+                    <img src="img/ruleTitle.png" class="title">
+                    <img src="img/heart.png" class="heart">
+                </h6>
+                <div>
+                    <h5>活动时间</h5>
+                    <p>2018年08月14日—2018年08月20日</p>
+                    <h5>活动规则</h5>
+                    <!--<p><span>1.</span>本活动为答题测试游戏模式；</p>-->
+                    <p><span>1.</span>活动期间每人每天首次完成答题测试，即可获得一次抽奖机会；</p>
+                    <p><span>2.</span>活动期间每天分享好友、朋友圈各获得一次抽奖机会，每人每天最多获得3次抽奖机会；</p>
+                    <p><span>3.</span>用户可在活动页面自行领取奖品（红包满1元即可提现），红包领取时间截至8月21日24:00；</p>
+                    <p><span>4.</span>此活动最终解释权归中国银联重庆分公司所有。</p>
+                    <h5>奖项设置</h5>
+                    <p>一等奖（520元红包）<span style="float: right">1名</span></p>
+                    <p>二等奖（77元红包） <span style="float: right">3名</span></p>
+                    <p>三等奖（0.77元红包） <span style="float: right">3000名</span></p>
+                </div>
+                <a class="IKnow"  onclick="$(this).parents('.ruleWindow').css('display','none')">我知道了</a>
+                <img src="img/cancel.png" alt="" class="close" onclick="$(this).parents('.ruleWindow').css('display','none')">
+            </section>
+        </div>
+    </div>
+</body>
+<script>
+    $('.start').click(function () {
+//        alert('活动已结束');
+//        return false;
+        window.location.href="answer.html"
+    });
+    $(".reward").click(function () {
+        $(".rewardWindow").css("display","block");
+    });
+    $(".rule").click(function () {
+        $(".ruleWindow").css("display","block");
+    });
+    if($(".rewardList li").length==1){
+       $(".noData").css("display","block")
+    }
+    document.onreadystatechange = completeLoading;
+    //加载状态为complete时移除loading效果
+    function completeLoading() {
+        if (document.readyState == "complete") {
+            $('.fakeloader').hide();
+        }
+    }
+</script>
+<!--
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    wx.config(
+        {:A('Get')->wxlin()->getJsApiConfJson(false,['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareQZone'])}
+    );
+    wx.ready(function(){
+        var title = 'OMG，我的单身等级爆表啦！';
+        var desc = '谁说七夕就是情侣的天下？不要小看单身，赶紧来测试一下，你属于几级单身？';
+        var img = "http://.../Public/Qixic/img/share.jpg";
+        var url = "http://.../Qixic/Index/index";
+        //分享朋友圈
+        wx.onMenuShareTimeline({
+            title: desc, // 分享标题
+            link: url, // 分享链接
+            imgUrl: img, // 分享图标
+            success: function () {
+                $.ajax({
+                    type:'post',
+                    data:{},
+                    url:'__MODULE__/Index/start',
+                    dataType:'json',
+                    success:function(data){
+                        $.ajax({
+                            type:'post',
+                            data:{},
+                            url:'__MODULE__/Chance/addShareChance?type=sharec',
+                            dataType:'json',
+                            success:function(data){
+                                alert(data.msg);
+                            },
+                            error:function(){
+                                alert('系统繁忙！稍后再试');
+                            }
+                        });
+
+                    },
+                    error:function(){
+                        alert('系统繁忙！稍后再试');
+                    }
+                });
+            },
+            cancel: function () {
+
+            }
+        });
+        //分享微信好友
+        wx.onMenuShareAppMessage({
+            title: title, // 分享标题
+            desc: desc, // 分享描述
+            link: url, // 分享链接
+            imgUrl: img, // 分享图标
+            type: '', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () {
+                $.ajax({
+                    type:'post',
+                    data:{},
+                    url:'__MODULE__/Chance/addShareChance?type=sharef',
+                    dataType:'json',
+                    success:function(data){
+                        alert(data.msg);
+                    },
+                    error:function(){
+                        alert('系统繁忙！稍后再试');
+                    }
+                });
+            },
+            cancel: function () {
+            }
+        });
+    });
+</script>
+<script>
+    $('.getIt').click(function () {
+        $.ajax({
+            type: 'post',
+            url: '__CONTROLLER__/sendpack',
+            data:"",
+            success: function (msg) {
+                alert(msg.msg);
+                window.location.reload();
+            }
+        })
+    })
+</script>
+-->
+</html>

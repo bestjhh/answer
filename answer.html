@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>七夕，单身大测试</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="css/answer.css?{:rand()}">
+    <script src="js/jquery-2.1.3.js"></script>
+    <script src="js/rem.js"></script>
+</head>
+<body>
+    <div class="fakeloader" >
+        <div class="spinner2">
+            <div class="spinner-container container1">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container2">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container3">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+        </div>
+    </div>
+    <div id="answer">
+        <header>
+            <img src="img/logo.png" alt="" class="log">
+            <aside>
+                <a class="testAgain">再测一次</a>
+            </aside>
+        </header>
+        <!--答题开始-->
+        <section class="main">
+            <section class="">
+                <!--答题卡-->
+                <div>
+                    <!--题号-->
+                    <h5><span class="curNo"></span><span class="totalNo"></span></h5>
+                    <!--问题-->
+                    <p>
+                        <b>Q: </b><span class="question"></span>
+                    </p>
+                </div>
+                <!--选项-->
+                <ul class="list">
+                    <!--<li>A <a></a></li>-->
+                    <!--<li>B <a></a></li>-->
+                    <!--<li>C <a></a></li>-->
+                    <!--<li>D <a></a></li>-->
+                </ul>
+                <!--下一题-->
+                <p class="change next">
+                    <img src="img/next.png" alt="" class="nextImg">
+                    <img src="img/fullfill.png" alt="" class="fullfillImg">
+                </p>
+                <!--爱心元素-->
+                <img src="img/heart.png" alt="" class="heart">
+                <img src="img/lover1.png" alt="" class="lover lover1">
+                <img src="img/lover2.png" alt="" class="lover lover2">
+            </section>
+        </section>
+        <!--还有题未选-->
+        <div class="tip">
+            <a>请选择</a>
+        </div>
+        <!--答题结束-->
+        <!--证书展示开始-->
+        <section class="ce">
+            <section class="show">
+                <div>
+                    <!--童心证书-->
+                    <h6><img src="img/singleCe.png" alt=""></h6>
+                    <div class="levelCe">
+                        <!--头像啊-->
+                        <img src="" alt="" class="header" id="header">
+                        <!--<img src="{$member.headimgurl}" alt="" class="header" id="header">-->
+                        <!--测评结果-->
+                        <p>单身等级: <span class="level">
+                    <!--星星-->
+                </span></p>
+                        <p>荣誉称号: <span class="goodCall"></span></p>
+                        <p class="testResult">
+                            <!--系统评价-->
+                        </p>
+                        <!--二维码-->
+                        <img src="img/2Code.png" alt="" class="code">
+                        <p>扫描二维码参与活动</p>
+                        <!--背景元素-->
+                        <img src="img/boLang.png" alt="" class="bl1">
+                        <img src="img/boLang.png" alt="" class="bl2">
+                        <img src="img/heart.png" alt="" class="heart1">
+                        <img src="img/heart.png" alt="" class="heart2">
+                    </div>
+                </div>
+            </section>
+            <div>
+                <!--童心证书-->
+                <h6><img src="img/singleCe.png" alt=""></h6>
+                <div class="levelCe">
+                    <!--头像啊-->
+                    <img src="" alt="" class="header">
+                    <!--测评结果-->
+                    <p>单身等级: <span class="level"></span></p>
+                    <p>荣誉称号: <span class="goodCall"></span></p>
+                    <p class="testResult">
+                        <!--系统评价-->
+                    </p>
+                    <!--二维码-->
+                    <img src="img/2Code.png" alt="" class="code">
+                    <p>扫描二维码参与活动</p>
+                    <!--背景元素-->
+                    <img src="img/boLang.png" alt="" class="bl1">
+                    <img src="img/boLang.png" alt="" class="bl2">
+                    <img src="img/heart.png" alt="" class="heart1">
+                    <img src="img/heart.png" alt="" class="heart2">
+                </div>
+            </div>
+            <a class="pressSave">长按保存图片</a>
+            <!--展示证书-->
+            <p class="showCe">
+                <img src="img/showCe.png" alt="" class="share">
+                <img src="img/choujiang.png" alt="" class="choujiang">
+            </p>
+        </section>
+        <!--证书展示结束-->
+
+        <!--分享-->
+        <div class="shareP" style=" position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.8);
+    z-index: 335;
+    display: none;">
+            <img src="img/share.png" alt="" style="width: 100%;">
+            <p style="text-align: center;">
+                <a class="Ikown" style="
+        display: inline-block;
+        border-radius: .1rem;
+        border: .02rem solid #FFE70B;
+        color: #FFE70B;
+        margin: 1rem auto;
+        width: 3rem;
+        font-size: .4rem;
+        padding: .2rem .5rem;">
+                    <img src="img/Ikown.png" alt="" style="width: 100%" onclick="$(this).parents('.shareP').css('display','none')">
+                </a>
+            </p>
+        </div>
+
+        <!--抽奖结果-->
+        <div class="cjResult">
+            <section>
+                <h6>
+                    <img src="img/cjResult.png" class="title">
+                    <img src="img/heart.png" class="heart">
+                </h6>
+                <p id="congra">恭喜获得红包<br><span id="money">88.8</span>元</p>
+                <p id="thanks" style="display: none">很遗憾，这次什么都没抽到~</p>
+                <a onclick="$(this).parents('.cjResult').css('display','none')">确定</a>
+            </section>
+        </div>
+    </div>
+</body>
+<!--保存图片-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+<script src="js/Canvas2Image.js"></script>
+<script>
+    let n = parseInt(9*Math.random()+1);//1-9
+    $(".header").attr("src","img/header/header"+n+".jpg");
+    let data = [
+        {
+            question: "导致至今单身的原因是什么？",
+            answer: [{A: "凭实力单身，没有原因", score: 1}, {B: "自己都养不活", score: 2}, {C: "要是知道原因，还能单身到现在吗？", score: 3}, {D: "不好意思，我是来围观单身的日常", score: 4}]
+        },
+        {
+            question:"娱乐占据了你日常生活的多少？",
+            answer:[{A:"全部",score:1},{B:"生活的一半",score:2},{C:"浪费时间",score:3},{D:"与另一半一起度过",score:4}]
+        },
+        {
+            question:"你心目中的爱情是怎样的？",
+            answer:[{A:"浪费时间",score:1},{B:"痛苦难熬",score:2},{C:"自爱沉稳，而后爱人",score:3},{D:"幸福甜蜜",score:4}]
+        },
+        {
+            question:"单身，使你最心塞的是什么？",
+            answer:[{A:"手机太好玩，没空谈恋爱",score:1},{B:"太完美，别人觉得我有距离",score:2},{C:"大家都以为我有对象了",score:3},{D:"不懂单身的心塞",score:4}]
+        },
+        {
+            question:"七夕的到来，你想谈一场轰轰烈烈的恋爱吗？",
+            answer:[{A:"稳住，我不着急",score:1},{B:"眼里只有钱，只想赚钱",score:2},{C:"我只想撩人，不想谈恋爱",score:3},{D:"确认过眼神，已遇上了对的人",score:4}]
+        }
+    ];
+    // 星级划分：0-6  7-10  11-15  16-19  20
+    let testResult = [
+        {level:0},
+        {level:6,txt:"没有人能轻易配得上，我这个共产主义接班人",nickName:'斗战剩佛'},
+        {level:10,txt:"原来是喜欢一个人，现在是喜欢一个人",nickName:'齐天大剩'},
+        {level:15,txt:"曾经沧海难为水，除却巫山不是云",nickName:'必剩客'},
+        {level:19,txt:"这世界上有一个人是永远等着你的，不管是在什么时候，不管你是在什么地方，反正你知道，总有这样一个人。",nickName:'剩斗士'},
+        {level:20,txt:"往后余生，风雪是你、清贫也是你、荣华是你、心地温柔是你，我只要你。",nickName:'特别的人'}
+    ];
+    let ANSWER = {
+        curNum:0,//当前页码
+        totalNum:data.length,//总共题数
+        score:0,//分数
+        data:data,
+        level:0,//评测等级
+        s:0,//当前题分数
+        testResult:testResult//测试结果
+    };
+    function Answer(config) {
+        this.curNum=config.curNum;
+        this.totalNum=config.totalNum;
+        this.data=config.data;
+        this.testResult=config.testResult;
+        this.score=config.score;
+        this.level=config.level;
+        this.init=function(){
+            var that=this;
+            this.insert();
+            this.choose();
+            this.next();
+        };
+        // 初始数据
+        this.insert=function () {
+            let that=this;
+            let i=that.curNum;
+            let jason=that.data[i].answer;
+            $(".list li").remove();
+            $(".curNo").html(i+1);
+            $(".totalNo").html("/"+that.totalNum);
+            $(".question").html(data[i].question);
+            $(jason).each(function (j,e) {
+                let jason=(that.data[i].answer)[j];
+                let keys = [];
+                for (let p1 in jason) {
+                    if (jason.hasOwnProperty(p1))
+                        keys.push(p1);
+                }
+                $(".list").append('<li><c>'+keys[0]+'</c><a>'+jason[keys[0]]+'</a></li>')
+            });
+        };
+        // 选择答案
+        this.choose=function () {
+            let that = this;
+            let lis=$(".list li");
+            $(".list").on("click","li",function () {
+                if($(this).hasClass("on")){
+                    $(this).removeClass("on");
+                    that.s=0;//取消选择时取消分数
+                }else {
+                    $(this).addClass("on").siblings().removeClass("on");
+                    let index=$(this).index();
+                    that.s=data[that.curNum].answer[index].score;//选择答案得到分数
+                    console.log("当前项分数: "+that.s);
+                }
+            });
+        };
+        // 下一题
+        this.next=function () {
+            let that=this;
+            let lis=$(".list li");
+            $(".next").click(function () {
+                if($(".list li.on").length<1){
+                    $(".tip").css("display","block");
+                    setTimeout(function () {
+                        $(".tip").css("display","none");
+                    },800);
+                    return false;
+                }
+                that.score+=that.s;
+                console.log("当前总分："+that.score);
+                that.s = 0;
+                that.curNum+=1;
+                lis.removeClass("on");
+                if(that.curNum < that.totalNum - 1){
+                    that.insert(that.curNum);
+                }
+                else if(that.curNum == that.totalNum-1){
+                    // 最后一题
+                    console.log("最后一题");
+                    that.insert(that.curNum+1);
+                    $(".main section").addClass("over");
+                    $(".change").removeClass("next").addClass("fullfill").on("click",function () {
+                        if($(".list li.on").length<1){
+                            $(".tip").css("display","block");
+                            setTimeout(function () {
+                                $(".tip").css("display","none");
+                            },800);
+                            return false;
+                        }
+                        that.insertRes();
+                        $(".main").css("display","none");
+                        $(".ce,.pressSave").css("display","block");
+                        that.pintting();
+
+                        var timeOutEvent=0,cardId;
+                        $("body").on({
+                            touchstart: function(e){
+                                var that = this;
+                                timeOutEvent = setTimeout(function () {
+                                    //长按触发事件
+                                    timeOutEvent = 0;
+                                    $(".f-full").css("display","block");
+                                },400);
+                                // e.preventDefault();
+                            },
+                            touchmove: function(){
+                                clearTimeout(timeOutEvent);
+                                timeOutEvent = 0;
+                            },
+                            touchend: function(){
+                                clearTimeout(timeOutEvent);
+                                if(timeOutEvent!=0){
+                                    $(".f-full").css("display","none");
+                                }
+                                // return false;
+                            }
+                        })
+                    });
+                }
+            });
+        };
+        // 画图
+        this.pintting=function () {
+            var cntElem = $('.show')[0];
+            var shareContent = cntElem;//需要截图的包裹的（原生的）DOM 对象
+            var width = shareContent.offsetWidth; //获取dom 宽度
+            var height = shareContent.offsetHeight; //获取dom 高度
+            var canvas = document.createElement("canvas"); //创建一个canvas节点
+            var scale = 2; //定义任意放大倍数 支持小数
+            canvas.width = width * scale; //定义canvas 宽度 * 缩放
+            canvas.height = height * scale; //定义canvas高度 *缩放
+            canvas.getContext("2d").scale(scale, scale); //获取context,设置scale
+            var opts = {
+                scale: scale, // 添加的scale 参数
+                canvas: canvas, //自定义 canvas
+                // logging: true, //日志开关，便于查看html2canvas的内部执行流程
+                width: width, //dom 原始宽度
+                height: height,
+                useCORS: true // 【重要】开启跨域配置
+            };
+            html2canvas(shareContent, opts).then(function (canvas) {
+                var context = canvas.getContext('2d');
+                // 【重要】关闭抗锯齿
+                context.mozImageSmoothingEnabled = false;
+                context.webkitImageSmoothingEnabled = false;
+                context.msImageSmoothingEnabled = false;
+                context.imageSmoothingEnabled = false;
+                // 【重要】默认转化的格式为png,也可设置为其他格式
+                var img = Canvas2Image.saveAsPNG(canvas, canvas.width, canvas.height);
+                document.body.appendChild(img);
+                $(img).css({
+                    "width": canvas.width / 2 + "px",
+                    "height": canvas.height / 2 + "px",
+                    "position":"fixed",
+                    "top":"0",
+                    "left":"0",
+                    "opacity":"0",
+                    "z-index":'222',
+                    'display':'none'
+                }).addClass('f-full');
+            });
+        };
+        // 测试结果
+        this.insertRes = function (){
+            let that = this;
+            $(that.testResult).each(function (i,e) {
+                if(that.score <= that.testResult[i].level &&that.score > that.testResult[i-1].level){
+                    answer = that.totalNum+1-i;
+                    console.log("测试结果: "+that.testResult[i].txt+"\n单身指数: "+answer+" 颗星"+"\n人称："+that.testResult[i].nickName);
+                    $(".testResult").html(that.testResult[i].txt);
+                    $(".goodCall").html(that.testResult[i].nickName)
+                }
+            });
+            //添加星星
+            for(let i = 0; i < answer; i++){
+                $(".level").append('<img src="img/star.png">')
+            }
+        };
+    }
+    var answer = new Answer(ANSWER);
+    answer.init();
+    // 再测一次
+    $(".testAgain").click(function () {
+        window.location.reload();
+        $(".ce").css("display","none");
+        $(".main").css("display","block");
+    });
+    // 展示证书
+    $(".share").click(function () {
+        $(".shareP").css("display","block")
+    });
+
+    $(".choujiang").click(function () {
+        $('#money').html(data.money);
+        $('#congra').css('display','block');
+        $('#thanks').css("display","none");
+        /*
+        $.ajax({
+            type:'post',
+            data:{},
+            url:'__MODULE__/Index/start',
+            dataType:'json',
+            success:function(data){
+                if(data.sta){
+                    if(data.rate=='4'){
+                        $('#congra').css('display','none');
+                        $('#thanks').css("display","block");
+                    }else{
+                        $('#money').html(data.money);
+                        $('#congra').css('display','block');
+                        $('#thanks').css("display","none");
+                    }
+                    $(".cjResult").css("display","block")
+                }else{
+                    alert(data.msg);
+                    //window.location.reload();
+                }
+            },
+            error:function(){
+                alert('系统繁忙！稍后再试');
+            }
+        });         */
+    });
+    document.onreadystatechange = completeLoading;
+    //加载状态为complete时移除loading效果
+    function completeLoading() {
+        if (document.readyState == "complete") {
+            $('.fakeloader').hide();
+        }
+    }
+</script>
+<!--<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>-->
+<script type="text/javascript">
+    /*
+    wx.config(
+        {:A('Get')->wxlin()->getJsApiConfJson(false,['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareQZone'])});
+    wx.ready(function(){
+        var title = 'OMG，我的单身等级爆表啦！';
+        var desc = '谁说七夕就是情侣的天下？不要小看单身，赶紧来测试一下，你属于几级单身？';
+        var img = "http://.../Public/Qixic/img/share.jpg";
+        var url = "http://.../Qixic/Index/index";
+        //分享朋友圈
+        wx.onMenuShareTimeline({
+            title: desc, // 分享标题
+            link: url, // 分享链接
+            imgUrl: img, // 分享图标
+            success: function () {
+                $.ajax({
+                    type:'post',
+                    data:{},
+                    url:'__MODULE__/Index/start',
+                    dataType:'json',
+                    success:function(data){
+                        $.ajax({
+                            type:'post',
+                            data:{},
+                            url:'__MODULE__/Chance/addShareChance?type=sharec',
+                            dataType:'json',
+                            success:function(data){
+                                alert(data.msg);
+                            },
+                            error:function(){
+                                alert('系统繁忙！稍后再试');
+                            }
+                        });
+
+                    },
+                    error:function(){
+                        alert('系统繁忙！稍后再试');
+                    }
+                });
+            },
+            cancel: function () {
+
+            }
+        });
+        //分享微信好友
+        wx.onMenuShareAppMessage({
+            title: title, // 分享标题
+            desc: desc, // 分享描述
+            link: url, // 分享链接
+            imgUrl: img, // 分享图标
+            type: '', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () {
+                $.ajax({
+                    type:'post',
+                    data:{},
+                    url:'__MODULE__/Chance/addShareChance?type=sharef',
+                    dataType:'json',
+                    success:function(data){
+                        alert(data.msg);
+                    },
+                    error:function(){
+                        alert('系统繁忙！稍后再试');
+                    }
+                });
+            },
+            cancel: function () {
+            }
+        });
+    });
+    */
+</script>
+</html>
